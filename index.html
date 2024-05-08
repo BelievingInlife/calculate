@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lightly-HTML-Project</title>
+    <style>
+        .calculation {
+            margin-top: 20%;
+            padding-left: 40%;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="calculation">
+        <p><input type="text" name="" id="ma_lv"> 码率/kbps</p>
+        <p><input type="text" name="" id="ren_shu"> 人数</p>
+        <p><input type="text" name="" id="shi_jian"> 时间/秒</p>
+        <p><button id="calc" type="submit">点击计算</button></p>
+        <p id="result"></p>
+    </div>
+  
+</body>
+    <script>
+        
+        document.getElementById("calc").addEventListener("click", function() {
+          // 获取输入框元素
+          var ma_lv = document.getElementById("ma_lv").value;
+          var ren_shu = document.getElementById("ren_shu").value;
+          var shi_jian = document.getElementById("shi_jian").value;
+          
+          // 计算
+          var result = Math.round(ma_lv / 8 * ren_shu * shi_jian / 1024 /1024);
+          // 在控制台输出值
+          alert("使用流量= " + result);
+        });
+    </script>
+</html>
